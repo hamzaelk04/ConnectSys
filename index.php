@@ -26,7 +26,7 @@
             <button class="login btn btn-secondary button">
                 S'inscrire
             </button>
-            <button type="button" class="btn btn-dark button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-dark button" onclick="location.href='includes/login.php'">
                 Se connecter
             </button>
         </div>
