@@ -7,6 +7,14 @@
     <title>ConnectSys</title>
 </head>
 <body>
-    
+    <header>
+        <?php 
+            include_once 'includes/header.php';
+        ?>
+    </header>
+
+    <section class="main">
+
+    </section>
 </body>
 </html>

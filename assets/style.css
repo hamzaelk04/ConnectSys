@@ -1,6 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url(background.jpg);
-    height: 100%;
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+nav {
+    height: 60px;
+    background-color: #D3D3D3;
+}
+
+nav.navbarStyle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
