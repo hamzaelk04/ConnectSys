@@ -65,3 +65,7 @@ nav.navbarStyle {
 .signup-button {
     margin-top: 10px;
 }
+
+.profile-body{
+    background-image: none;
+}

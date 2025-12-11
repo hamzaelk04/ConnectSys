@@ -29,7 +29,7 @@
                     <span>Si vous n'avez pas de compte: </span>
                     <button type="button" class="btn btn-secondary" onclick="location.href='includes/signUp.php'">S'inscrire</button>
                 </div>
-                <button type="button" class="btn btn-dark">Connexion</button>
+                <button type="button" class="btn btn-dark" onclick="location.href='../profile.php'">Connexion</button>
             </div>
         </form>
     </section>
