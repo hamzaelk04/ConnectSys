@@ -15,7 +15,7 @@
             <span class="navbar-brand text-white mb-0 h1">ConnectSys</span>
         </div>
         <div class="buttons navbar">
-            <button class="btn btn-dark button">
+            <button class="btn btn-dark button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Se Connecter
             </button>
         </div>

@@ -44,3 +44,9 @@ nav.navbarStyle {
     display: flex;
     gap: 24px;
 }
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
