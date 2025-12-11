@@ -19,10 +19,33 @@
 
     <section class="main">
         <h1>
-            Bienvenue 
+            Bienvenue
         </h1>
 
-        
+        <div class="info">
+            <table class="table">
+                <tr>
+                    <th scope="row">Nom d’utilisateur:</th>
+                    <td>hamza</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date d’inscription:</th>
+                    <td>12-12-25</td>
+                </tr>
+                <tr>
+                    <th scope="row">L’heure de connexion:</th>
+                    <td>23:38</td>
+                </tr>
+                <tr>
+                    <th scope="row">Gestion de contacts:</th>
+                    <td>
+                        <button type="button" class="btn btn-dark"
+                            onclick="location.href='../profile.php'">Contacts</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
 </body>
+
 </html>
