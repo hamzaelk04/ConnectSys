@@ -21,15 +21,19 @@
                 <input type="text" class="form-control" placeholder="Nom d'utilisateur:">
             </div>
             <div class="div-input">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" placeholder="E-mail:">
+            </div>
+            <div class="div-input">
                 <label class="form-label">Mot de passe</label>
                 <input type="password" class="form-control" placeholder="Mot de passe">
             </div>
-            <div class="buttons buttons-login">
-                <div class="signup-button">
-                    <span>Si vous n'avez pas de compte: </span>
-                    <button type="button" class="btn btn-secondary" onclick="location.href='includes/signUp.php'">S'inscrire</button>
-                </div>
-                <button type="button" class="btn btn-dark">Connexion</button>
+            <div class="div-input">
+                <label class="form-label">Confirmation du mot de passe</label>
+                <input type="password" class="form-control" placeholder="Confirmation du mot de passe">
+            </div>
+            <div class="buttons buttons-signup d-flex justify-content-end">
+                <button type="button" class="signup-button btn btn-dark">Se connecter</button>
             </div>
         </form>
     </section>

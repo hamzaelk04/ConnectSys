@@ -23,7 +23,7 @@
         </h1>
 
         <div class="buttons">
-            <button class="login btn btn-secondary button">
+            <button class="login btn btn-secondary button" onclick="location.href='includes/signUp.php'">
                 S'inscrire
             </button>
             <button type="button" class="btn btn-dark button" onclick="location.href='includes/login.php'">
