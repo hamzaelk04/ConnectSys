@@ -13,7 +13,7 @@ body {
 
 nav {
     height: 60px;
-    background-color: #D3D3D3;
+    background-color: #6C757D;
 }
 
 nav.navbarStyle {
@@ -21,4 +21,26 @@ nav.navbarStyle {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+}
+
+.button {
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.main {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.buttons {
+    display: flex;
+    gap: 24px;
 }

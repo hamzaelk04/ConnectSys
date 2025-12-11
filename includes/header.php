@@ -15,7 +15,7 @@
             <span class="navbar-brand text-white mb-0 h1">ConnectSys</span>
         </div>
         <div class="buttons navbar">
-            <button class="connexion">
+            <button class="btn btn-dark button">
                 Se Connecter
             </button>
         </div>
