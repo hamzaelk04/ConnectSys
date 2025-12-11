@@ -40,7 +40,7 @@
                     <th scope="row">Gestion de contacts:</th>
                     <td>
                         <button type="button" class="btn btn-dark"
-                            onclick="location.href='../profile.php'">Contacts</button>
+                            onclick="location.href='../contacts.php'">Contacts</button>
                     </td>
                 </tr>
             </table>
