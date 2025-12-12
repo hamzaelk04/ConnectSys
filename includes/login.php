@@ -18,7 +18,7 @@
         <form class="form-input" action="" method="post">
             <div class="div-input">
                 <label class="form-label">Nom d’utilisateur</label>
-                <input type="text" class="form-control" placeholder="Nom d'utilisateur:">
+                <input type="text" class="form-control" name="username" placeholder="Nom d'utilisateur:">
             </div>
             <div class="div-input">
                 <label class="form-label">Mot de passe</label>
@@ -27,11 +27,13 @@
             <div class="buttons buttons-login">
                 <div class="signup-button">
                     <span>Si vous n'avez pas de compte: </span>
-                    <button type="button" class="btn btn-secondary" onclick="location.href='includes/signUp.php'">S'inscrire</button>
+                    <button type="button" class="btn btn-secondary" onclick="location.href='signUp.php'">S'inscrire</button>
                 </div>
                 <button type="button" class="btn btn-dark" onclick="location.href='../profile.php'">Connexion</button>
             </div>
         </form>
+
+        <?php echo $_POST['username'] ?? ''; ?>
     </section>
 </body>
 
