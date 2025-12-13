@@ -1,11 +1,20 @@
-<?php 
+<?php
+    include 'config/config.php';
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $cPassword = $_POST['cPassword'];
 
-        
+        $sql = "INSERT INTO user_ (password_, username, email)
+        VALUES ('$password', '$username', '$email')";
+
+        // if ($conn -> query($sql) == true){
+        //     echo "New record created successfully";
+        // } else {
+        //     echo "Error: " . $conn->error;
+        // }
     }
 ?>
 

@@ -1,6 +1,3 @@
-<?php 
-    include 'includes/config/config.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,4 +32,5 @@
         </div>
     </section>
 </body>
+
 </html>

@@ -23,9 +23,5 @@ btn.addEventListener('click', (event) => {
     } else if (password !== cPassword) {
         event.preventDefault()
         alert("Les mots de passe ne correspondent pas. Veuillez les recréer.")
-    } else {
-        event.preventDefault()
-        location.href = '../profile.php'
     }
-
 })
