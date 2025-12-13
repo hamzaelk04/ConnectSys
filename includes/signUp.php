@@ -44,7 +44,7 @@
                 <input type="password" name="cPassword" id="cPassword" class="form-control" placeholder="Confirmation du mot de passe" required>
             </div>
             <div class="buttons buttons-signup d-flex justify-content-end">
-                <button type="submit" id="signUp-btn" class="signup-button btn btn-dark">Se connecter</button>
+                <button type="submit" id="signUp-btn" class="signup-button btn btn-dark" >Se connecter</button>
             </div>
         </form>
     </section>

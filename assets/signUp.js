@@ -8,17 +8,24 @@ btn.addEventListener('click', (event) => {
     let username = document.getElementById('username').value
     let email = document.getElementById('email').value
 
-    if (username.length < 3) {
+    console.log(typeof (password.length));
+    if (password.length == 0 || cPassword.length == 0 || username.length == 0 || email.length == 0) {
+        alert("Vous devez completer tous les champs.")
+    } else if (username.length < 3 && username.length > 0) {
         event.preventDefault()
         alert("Le nom d’utilisateur doit contenir au moins 3 caractères.")
-    } else if (!nameRegex.test(username)) {
+    } else if (!nameRegex.test(username) && username.length > 0) {
         event.preventDefault()
         alert("Le nom d’utilisateur doit être alphanumérique (lettres et chiffres uniquement).")
-    } else if (!emailRegex.test(email)) {
+    } else if (!emailRegex.test(email) && username.length > 0) {
         event.preventDefault()
         alert("L'email doit être au format de qwerty@example.com")
     } else if (password !== cPassword) {
         event.preventDefault()
         alert("Les mots de passe ne correspondent pas. Veuillez les recréer.")
+    } else {
+        event.preventDefault()
+        location.href = '../profile.php'
     }
+
 })
