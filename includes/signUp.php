@@ -29,19 +29,19 @@
         <form class="form-input" action="" method="post">
             <div class="div-input">
                 <label class="form-label">Nom d’utilisateur</label>
-                <input type="text" name="username" class="form-control" placeholder="Nom d'utilisateur:">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Nom d'utilisateur:" required>
             </div>
             <div class="div-input">
                 <label class="form-label">E-mail</label>
-                <input type="email" name="email" class="form-control" placeholder="E-mail:">
+                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail:" required>
             </div>
             <div class="div-input">
                 <label class="form-label">Mot de passe</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Mot de passe">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Mot de passe" required>
             </div>
             <div class="div-input">
                 <label class="form-label">Confirmation du mot de passe</label>
-                <input type="password" name="cPassword" id="cPassword" class="form-control" placeholder="Confirmation du mot de passe">
+                <input type="password" name="cPassword" id="cPassword" class="form-control" placeholder="Confirmation du mot de passe" required>
             </div>
             <div class="buttons buttons-signup d-flex justify-content-end">
                 <button type="submit" id="signUp-btn" class="signup-button btn btn-dark">Se connecter</button>
