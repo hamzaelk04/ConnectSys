@@ -8,7 +8,13 @@ btn.addEventListener('click', (event) => {
     let username = document.getElementById('username').value
     let email = document.getElementById('email').value
 
-    console.log(typeof (password.length));
+    users.forEach(element => {
+        if (element.username === username || element.email === email) {
+            event.preventDefault
+            alert("le nom d'utilisateur ou l'email deja exists")
+        }
+    });
+    
     if (password.length == 0 || cPassword.length == 0 || username.length == 0 || email.length == 0) {
         alert("Vous devez completer tous les champs.")
     } else if (username.length < 3 && username.length > 0) {
