@@ -14,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cPassword = $_POST['cPassword'];
+    $date = date('Y-m-d');
+    $time = date('H:i:s');
 
     if (!$username || !$email || !$password || !$cPassword) {
         header("location: signUp.php");
@@ -26,40 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    // if ($oldData->num_rows == 0) {
-    //     if ($username && $email && $password && $cPassword) {
-    //         $sql = "INSERT INTO user_ (password_, username, email)
-    //         VALUES ('$password', '$username', '$email')";
+    $sql = "INSERT INTO user_ (password_, username, email, date_)
+            VALUES ('$password', '$username', '$email', '$date')";
 
-    //         if ($conn->query($sql) == true) {
-    //             header("location: ../profile.php");
-    //             exit;
-    //         } else {
-    //             echo "Error: " . $conn->error;
-    //         }
-    //     }
-    // } else {
-    //     while ($row = $oldData->fetch_assoc()) {
-    //         echo $row["id"] . $row["username"] . " " . $row["email"] . "<br>";
-    //         if ($row["username"] === $username) {
-    //             echo "<script>alert('Ce nom deja existe.')</script>";
-    //         } elseif ($row["email"] === $email) {
-    //             echo "<script>alert('Ce email deja existe.')</script>";
-    //         } else {
-    //             if ($username && $email && $password && $cPassword) {
-    //                 $sql = "INSERT INTO user_ (password_, username, email)
-    //                 VALUES ('$password', '$username', '$email')";
-
-    //                 if ($conn->query($sql) == true) {
-    //                     header("location: ../profile.php");
-    //                     exit;
-    //                 } else {
-    //                     echo "Error: " . $conn->error;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+    if ($conn->query($sql) == true) {
+        header("location: ../profile.php");
+        exit;
+    } else {
+        echo "Error: " . $conn->error;
+    }
 }
 ?>
 
