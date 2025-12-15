@@ -1,9 +1,9 @@
 <?php
 include 'config/config.php';
+include 'config/query.php';
 $users = [];
 
-$data = "SELECT username, email FROM user_";
-$oldData = $conn->query($data);
+
 
 while ($row = $oldData->fetch_assoc()) {
     $users[] = $row;
@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cPassword = $_POST['cPassword'];
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $date = date('Y-m-d');
     $time = date('H:i:s');
 
@@ -28,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    $sql = "INSERT INTO user_ (password_, username, email, date_)
-            VALUES ('$password', '$username', '$email', '$date')";
+    $sql = "INSERT INTO user_ (password_, username, email, signup_date)
+            VALUES ('$hashedPassword', '$username', '$email', '$date')";
 
     if ($conn->query($sql) == true) {
         header("location: ../profile.php");
