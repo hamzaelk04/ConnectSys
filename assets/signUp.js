@@ -2,14 +2,16 @@ let btn = document.getElementById('signUp-btn')
 let nameRegex = /^[a-zA-Z0-9]+$/;
 let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
+console.log(users);
+
 btn.addEventListener('click', (event) => {
     let password = document.getElementById('password').value
     let cPassword = document.getElementById('cPassword').value
     let username = document.getElementById('username').value
     let email = document.getElementById('email').value
 
-    users.forEach(element => {
-        if (element.username === username || element.email === email) {
+    users.forEach(user => {
+        if (user.username === username || user.email === email) {
             event.preventDefault
             alert("le nom d'utilisateur ou l'email deja exists")
         }

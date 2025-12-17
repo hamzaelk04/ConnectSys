@@ -3,11 +3,11 @@ include 'config/config.php';
 include 'config/query.php';
 $users = [];
 
-
-
-while ($row = $oldData->fetch_assoc()) {
+while ($row = $stmt->fetch()) {
     $users[] = $row;
 }
+echo json_encode($users) . "<br>" ;
+echo $users['username'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -33,10 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$hashedPassword', '$username', '$email', '$date')";
 
     if ($conn->query($sql) == true) {
+        session_start();
+        // $_SESSION["id"] = "";
+
         header("location: ../profile.php");
         exit;
     } else {
-        echo "Error: " . $conn->error;
+        echo "hhhhhhh";
     }
 }
 ?>

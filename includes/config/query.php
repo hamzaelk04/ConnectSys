@@ -1,5 +1,9 @@
 <?php
+include 'config.php';
+
 $data = "SELECT username, email FROM user_";
-$oldData = $conn->query($data);
+$stmt = $conn->query($data);
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
 
 ?>

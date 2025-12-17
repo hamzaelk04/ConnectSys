@@ -3,10 +3,7 @@ $servername = "localhost";
 $dbname = "db_user";
 $username = "root";
 $password = "";
+$dsn = "mysql:host=$servername;dbname=$dbname;charset=utf8";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$conn = new PDO($dsn, $username, $password);
 ?>
