@@ -18,7 +18,7 @@ btn.addEventListener('click', (event) => {
     });
     
     if (password.length == 0 || cPassword.length == 0 || username.length == 0 || email.length == 0) {
-        alert("Vous devez completer tous les champs.")
+            
     } else if (username.length < 3 && username.length > 0) {
         event.preventDefault()
         alert("Le nom d’utilisateur doit contenir au moins 3 caractères.")

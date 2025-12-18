@@ -1,11 +1,19 @@
-<?php
-// include '../includes/config/config.php';
-// include '../includes/config/query.php';
-// $users = [];
+<?php   
+include '../includes/config/query.php';
+$users = [];
 
-// while ($row = $stmt->fetch()) {
-//     $users[] = $row;
-// }
+while ($row = $stmt->fetch()) {
+    $users[] = $row;
+}
+
+switch ($_POST['submit']) {
+    case 'register':
+        register();
+        break;
+    case 'login':
+        // 
+        break;
+}
 
 function register()
 {
@@ -19,23 +27,13 @@ function register()
     $date = date('Y-m-d');
     $time = date('H:i:s');
 
-    echo $username . '<br>' . $email . '<br>' . $password;
+    if (!$username || !$email || !$password || !$cPassword)
+        header("location: ../includes/register.php");
+
+    if ($password !== $cPassword)
+        header("location: ../includes/register.php");
+
 }
-
-register();
-
-
-
-// if (!$username || !$email || !$password || !$cPassword) {
-//     header("location: ../includes/register.php");
-//     exit;
-// }
-
-// if ($password !== $cPassword) {
-//     header("location: ../includes/register.php");
-//     exit;
-// }
-
 // try {
 //     $conn->prepare($sql)->execute([$hashedPassword, $username, $email, $date]);
 // } catch (Exception $e) {
@@ -47,3 +45,7 @@ register();
 
 // header("location: ../profile.php");
 ?>
+<!-- <script>
+    const users = "<?php echo $_POST['username']; ?>";
+</script>
+<script src="../assets/signUp.js"></script> -->

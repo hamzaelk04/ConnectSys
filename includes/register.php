@@ -34,15 +34,13 @@
                     placeholder="Confirmation du mot de passe">
             </div>
             <div class="buttons buttons-signup d-flex justify-content-end">
-                <button type="submit" name="submit" id="signUp-btn" class="signup-button btn btn-dark">Se connecter</button>
+                <button type="submit" value="register" name="submit" id="signUp-btn" class="signup-button btn btn-dark">Se connecter</button>
             </div>
         </form>
     </section>
 
-    <script>
-        const users = ;
-    </script>
-    <script src="../assets/signUp.js"></script>
+    
+    
 </body>
 
 </html>

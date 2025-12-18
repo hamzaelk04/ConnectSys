@@ -7,5 +7,5 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 $sql = "INSERT INTO user_ (password_, username, email, signup_date)
             VALUES (?, ?, ?, ?)";
-$insert = $pdo -> prepare($sql);
+$insert = $conn -> prepare($sql);
 ?>
