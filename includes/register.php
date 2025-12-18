@@ -1,43 +1,3 @@
-<?php
-include 'config/config.php';
-include 'config/query.php';
-$users = [];
-
-while ($row = $stmt->fetch()) {
-    $users[] = $row;
-}
-
-if (!isset($_POST['submit'])) echo 'jhhhh';
-$username = $_POST['username'] ?? null;
-$email = $_POST['email'];
-$password = $_POST['password'];
-$cPassword = $_POST['cPassword'];
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-$date = date('Y-m-d');
-$time = date('H:i:s');
-
-if (!$username || !$email || !$password || !$cPassword) {
-    // header("location: signUp.php");
-    // exit;
-}
-
-if ($password !== $cPassword) {
-    // header("location: signUp.php");
-    // exit;
-}
-
-try {
-    $conn->prepare($sql)->execute([$hashedPassword, $username, $email, $date]);
-} catch (Exception $e) {
-    header("location: signUp.php");
-}
-
-session_start();
-// $_SESSION["id"] = "";
-
-// header("location: ../profile.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +15,7 @@ session_start();
         <?php include_once 'header.php' ?>
     </header>
     <section class="main">
-        <form class="form-input" action="" method="post">
+        <form class="form-input" method="post" action="../logic/logic.php">
             <div class="div-input">
                 <label class="form-label">Nom d’utilisateur</label>
                 <input type="text" name="username" id="username" class="form-control" placeholder="Nom d'utilisateur:">
@@ -74,13 +34,13 @@ session_start();
                     placeholder="Confirmation du mot de passe">
             </div>
             <div class="buttons buttons-signup d-flex justify-content-end">
-                <button type="submit" id="signUp-btn" class="signup-button btn btn-dark">Se connecter</button>
+                <button type="submit" name="submit" id="signUp-btn" class="signup-button btn btn-dark">Se connecter</button>
             </div>
         </form>
     </section>
 
     <script>
-        const users = <?= json_encode($users) ?>;
+        const users = ;
     </script>
     <script src="../assets/signUp.js"></script>
 </body>
