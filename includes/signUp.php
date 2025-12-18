@@ -6,42 +6,36 @@ $users = [];
 while ($row = $stmt->fetch()) {
     $users[] = $row;
 }
-echo json_encode($users) . "<br>" ;
-echo $users['username'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $cPassword = $_POST['cPassword'];
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $date = date('Y-m-d');
-    $time = date('H:i:s');
+if (!isset($_POST['submit'])) echo 'jhhhh';
+$username = $_POST['username'] ?? null;
+$email = $_POST['email'];
+$password = $_POST['password'];
+$cPassword = $_POST['cPassword'];
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$date = date('Y-m-d');
+$time = date('H:i:s');
 
-    if (!$username || !$email || !$password || !$cPassword) {
-        header("location: signUp.php");
-        exit;
-    }
-
-    if ($password !== $cPassword) {
-        header("location: signUp.php");
-        exit;
-    }
-
-
-    $sql = "INSERT INTO user_ (password_, username, email, signup_date)
-            VALUES ('$hashedPassword', '$username', '$email', '$date')";
-
-    if ($conn->query($sql) == true) {
-        session_start();
-        // $_SESSION["id"] = "";
-
-        header("location: ../profile.php");
-        exit;
-    } else {
-        echo "hhhhhhh";
-    }
+if (!$username || !$email || !$password || !$cPassword) {
+    // header("location: signUp.php");
+    // exit;
 }
+
+if ($password !== $cPassword) {
+    // header("location: signUp.php");
+    // exit;
+}
+
+try {
+    $conn->prepare($sql)->execute([$hashedPassword, $username, $email, $date]);
+} catch (Exception $e) {
+    header("location: signUp.php");
+}
+
+session_start();
+// $_SESSION["id"] = "";
+
+// header("location: ../profile.php");
 ?>
 
 <!DOCTYPE html>
