@@ -33,7 +33,20 @@ function register()
     if ($password !== $cPassword)
         header("location: ../includes/register.php");
 
+    if (insertIntoDb($hashedPassword, $username, $email, $date)) echo 'jhhhh';
 }
+
+function insertIntoDb($password, $username, $email, $date) {
+    global $insert;
+     
+    try {
+        $insert -> execute([$password, $username, $email, $date]); 
+        return true;
+    } catch (PDOException $th) {
+        $th <- get;
+    }
+}
+
 // try {
 //     $conn->prepare($sql)->execute([$hashedPassword, $username, $email, $date]);
 // } catch (Exception $e) {
