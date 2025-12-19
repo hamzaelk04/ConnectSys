@@ -1,4 +1,4 @@
-<?php   
+<?php
 include '../includes/config/query.php';
 $users = [];
 
@@ -33,30 +33,24 @@ function register()
     if ($password !== $cPassword)
         header("location: ../includes/register.php");
 
-    if (insertIntoDb($hashedPassword, $username, $email, $date)) echo 'jhhhh';
-}
-
-function insertIntoDb($password, $username, $email, $date) {
-    global $insert;
-     
     try {
-        $insert -> execute([$password, $username, $email, $date]); 
-        return true;
-    } catch (PDOException $th) {
-        $th <- get;
+        insertIntoDb($hashedPassword, $username, $email, $date);
+    } catch (Exception $th) {
+        echo 'failed inserting ' . $th ->getMessage();
     }
 }
 
-// try {
-//     $conn->prepare($sql)->execute([$hashedPassword, $username, $email, $date]);
-// } catch (Exception $e) {
-//     header("location: signUp.php");
-// }
+function insertIntoDb($password, $username, $email, $date)
+{
+    global $insert;
 
-// session_start();
-// $_SESSION["id"] = "";
-
-// header("location: ../profile.php");
+    try {
+        $insert->execute([$password, $username, $email, $date]);
+        return true;
+    } catch (PDOException $th) {
+        echo $th->getMessage();
+    }
+}
 ?>
 <!-- <script>
     const users = "<?php echo $_POST['username']; ?>";

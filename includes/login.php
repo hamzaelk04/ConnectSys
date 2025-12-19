@@ -15,7 +15,7 @@
         <?php include_once 'header.php' ?>
     </header>
     <section class="main">
-        <form class="form-input" action="" method="post">
+        <form class="form-input" action="../logic/logic.php" method="post">
             <div class="div-input">
                 <label class="form-label">Nom d’utilisateur</label>
                 <input type="text" class="form-control" name="username" placeholder="Nom d'utilisateur:">
@@ -27,7 +27,7 @@
             <div class="buttons buttons-login">
                 <div class="signup-button">
                     <span>Si vous n'avez pas de compte: </span>
-                    <button type="button" class="btn btn-secondary" onclick="location.href='signUp.php'">S'inscrire</button>
+                    <button type="button" class="btn btn-secondary" onclick="location.href='register.php'">S'inscrire</button>
                 </div>
                 <button type="submit" class="btn btn-dark" onclick="location.href='../profile.php'">Connexion</button>
             </div>
