@@ -11,7 +11,7 @@ switch ($_POST['submit']) {
         register();
         break;
     case 'login':
-        // 
+        login();
         break;
 }
 
@@ -42,17 +42,38 @@ function register()
 
 function insertIntoDb($password, $username, $email, $date)
 {
-    global $insert;
+    // global $insert;
 
     try {
-        $insert->execute([$password, $username, $email, $date]);
+        insert()->execute([$password, $username, $email, $date]);
         return true;
     } catch (PDOException $th) {
         echo $th->getMessage();
     }
 }
+
+
+function login()
+{
+    if(!isset($_POST['submit'])) header('location: ../includes/login.php');
+    $username = $_POST['username'] ?? null;
+    $password = $_POST['password'] ?? null;
+
+    compareData($username, $password);
+}
+
+function compareData($username, $password)
+{
+    
+    select();
+    foreach (select() as $user) {
+        if ($user['username'] === $username && password_verify($password, $user['password_'])) {
+            header('location: ../profile.php');
+            break;
+        } else {
+            
+        }
+    }
+    
+}
 ?>
-<!-- <script>
-    const users = "<?php echo $_POST['username']; ?>";
-</script>
-<script src="../assets/signUp.js"></script> -->

@@ -22,14 +22,14 @@
             </div>
             <div class="div-input">
                 <label class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" placeholder="Mot de passe">
+                <input type="password" name="password" class="form-control" placeholder="Mot de passe">
             </div>
             <div class="buttons buttons-login">
                 <div class="signup-button">
                     <span>Si vous n'avez pas de compte: </span>
                     <button type="button" class="btn btn-secondary" onclick="location.href='register.php'">S'inscrire</button>
                 </div>
-                <button type="submit" class="btn btn-dark" onclick="location.href='../profile.php'">Connexion</button>
+                <button type="submit" value="login" name="submit" class="btn btn-dark" onclick="location.href='../profile.php'">Connexion</button>
             </div>
         </form>
 
