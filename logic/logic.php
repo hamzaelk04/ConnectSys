@@ -42,8 +42,6 @@ function register()
 
 function insertIntoDb($password, $username, $email, $date)
 {
-    // global $insert;
-
     try {
         insert()->execute([$password, $username, $email, $date]);
         return true;
@@ -59,21 +57,23 @@ function login()
     $username = $_POST['username'] ?? null;
     $password = $_POST['password'] ?? null;
 
-    compareData($username, $password);
+    if(compareData($username, $password)){
+        header('location: ../profile.php');
+    } else {
+        header('location: ../includes/login.php');
+    }
 }
 
 function compareData($username, $password)
 {
-    
+    $verified = false;
     select();
     foreach (select() as $user) {
         if ($user['username'] === $username && password_verify($password, $user['password_'])) {
-            header('location: ../profile.php');
+            $verified = true;
             break;
-        } else {
-            
         }
     }
-    
+    return $verified;
 }
 ?>
