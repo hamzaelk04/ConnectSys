@@ -17,7 +17,7 @@ function insert()
 function select()
 {
     global $conn;
-    $sql = "SELECT username, password_ FROM user_";
+    $sql = "SELECT id, username, password_, signup_date FROM user_";
     $data = $conn -> query($sql);
     $data -> setFetchMode(PDO::FETCH_ASSOC);
     return $data;

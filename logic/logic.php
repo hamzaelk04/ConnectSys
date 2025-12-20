@@ -36,7 +36,7 @@ function register()
     try {
         insertIntoDb($hashedPassword, $username, $email, $date);
     } catch (Exception $th) {
-        echo 'failed inserting ' . $th ->getMessage();
+        echo 'failed inserting ' . $th->getMessage();
     }
 }
 
@@ -53,11 +53,12 @@ function insertIntoDb($password, $username, $email, $date)
 
 function login()
 {
-    if(!isset($_POST['submit'])) header('location: ../includes/login.php');
+    if (!isset($_POST['submit']))
+        header('location: ../includes/login.php');
     $username = $_POST['username'] ?? null;
     $password = $_POST['password'] ?? null;
 
-    if(compareData($username, $password)){
+    if (compareData($username, $password)) {
         header('location: ../profile.php');
     } else {
         header('location: ../includes/login.php');
@@ -70,6 +71,8 @@ function compareData($username, $password)
     select();
     foreach (select() as $user) {
         if ($user['username'] === $username && password_verify($password, $user['password_'])) {
+            session_start();
+            $_SESSION['user'] = ;
             $verified = true;
             break;
         }
