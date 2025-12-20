@@ -1,7 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION['idLogin']);
-
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +30,11 @@ var_dump($_SESSION['idLogin']);
             <table class="table">
                 <tr>
                     <th scope="row">Nom d’utilisateur:</th>
-                    <td>hamza</td>
+                    <td><?= htmlspecialchars($_SESSION['user']['username'])?></td>
                 </tr>
                 <tr>
                     <th scope="row">Date d’inscription:</th>
-                    <td>12-12-25</td>
+                    <td><?= htmlspecialchars($_SESSION['user']['date'])?></td>
                 </tr>
                 <tr>
                     <th scope="row">L’heure de connexion:</th>

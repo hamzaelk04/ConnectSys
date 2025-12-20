@@ -72,7 +72,11 @@ function compareData($username, $password)
     foreach (select() as $user) {
         if ($user['username'] === $username && password_verify($password, $user['password_'])) {
             session_start();
-            $_SESSION['user'] = ;
+            $_SESSION['user'] = [
+                'id' => $user['id'],
+                'username' => $user['username'],
+                'date' => $user['signup_date'] 
+            ];
             $verified = true;
             break;
         }
