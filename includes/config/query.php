@@ -22,4 +22,12 @@ function select()
     $data -> setFetchMode(PDO::FETCH_ASSOC);
     return $data;
 }
+
+function insertIntoContacts() {
+    global $conn;
+    $sql = "INSERT INTO contact (username, phone, email, address, id_user)
+            VALUES (?, ?, ?, ?, ?)";
+    $insert = $conn->prepare($sql);
+    return $insert;
+}
 ?>

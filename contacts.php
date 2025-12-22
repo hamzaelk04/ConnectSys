@@ -29,7 +29,8 @@
                     <div class="card shadow-sm">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Contacts</h5>
-                            <button class="btn btn-secondary btn-sm">
+                            <button class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 + Add
                             </button>
                         </div>
@@ -58,7 +59,7 @@
                         </div>
 
                         <!-- FORM -->
-                        <div class="card-body d-none" id="contactForm">
+                        <form method="post" action="logic/contactLogic.php" class="card-body d-none" id="contactForm">
                             <h5 class="mb-4">Contact Details</h5>
 
                             <div class="mb-3">
@@ -82,10 +83,10 @@
                             </div>
 
                             <div class="d-flex gap-2">
-                                <button class="btn btn-primary">Update</button>
-                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="update">Update</button>
+                                <button class="btn btn-danger" type="submit" name="action" value="delete">Delete</button>
                             </div>
-                        </div>
+                        </form>
 
                     </div>
                 </div>
@@ -93,6 +94,41 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="logic/contactLogic.php" method="post" class="modal-body">
+                        <div class="div-input">
+                            <label class="form-label">Nom:</label>
+                            <input type="text" class="form-control" name="name" placeholder="Nom:">
+                        </div>
+                        <div class="div-input">
+                            <label class="form-label">Numero du telephone:</label>
+                            <input type="texte" name="phone" class="form-control" placeholder="Phone">
+                        </div>
+                        <div class="div-input">
+                            <label class="form-label">email:</label>
+                            <input type="text" name="contactEmail" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="div-input">
+                            <label class="form-label">Adresse:</label>
+                            <input type="text" name="address" class="form-control" placeholder="Adresse">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" name="action" class="btn btn-primary" value="save">Enregistrer</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         const contacts = document.querySelectorAll('.contact-item');
