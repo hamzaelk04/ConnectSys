@@ -83,4 +83,5 @@ function compareData($username, $password)
     }
     return $verified;
 }
+
 ?>
