@@ -78,10 +78,8 @@ nav.navbarStyle {
     height: 100%;
 }
 
-/* .profile-body{
-    background-image: none;
-} */
-.contactsMain{
+
+.contactsMain {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -109,4 +107,20 @@ nav.navbarStyle {
     width: 50%;
     height: 90vh;
     background-color: rgba(255, 255, 255, 0.728);
+}
+
+.overlay {
+    background: rgba(255, 255, 255, 0.324);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.contact-item {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-item:hover,
+.contact-item.active {
+    background-color: #e9ecef;
 }
